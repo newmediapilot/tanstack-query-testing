@@ -1,10 +1,12 @@
-import {APIRegistry} from '../../registry.api.ts';
+import { APIRegistry } from "../../registry.api.ts";
 
-const {queryKey: name} = APIRegistry["/api/phase/alpha"];
-
-const fixture = await import("./ApiPhaseAlpha.fixture.json");
+const { queryKey: name, url } = APIRegistry["/api/phase/alpha"];
 
 export async function queryFn() {
-    await new Promise((r) => setTimeout(r, 500))
-    return {name, fixture};
+    const res = await fetch(`http://localhost:4321${url}`);
+    const data = await res.json();
+    return {
+        name,
+        data
+    };
 }
