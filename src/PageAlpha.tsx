@@ -4,7 +4,6 @@ import {queryFn} from './queries/ApiPhaseAlpha.ts';
 const {queryKey} = APIRegistry["/api/phase/alpha"]
 
 export function PageAlpha() {
-    // @ts-ignore
-    const query = useQuery({ queryKey, queryFn })
+    const query = useQuery({ queryKey:[queryKey,{id: 99}], queryFn })
     return <div>alpha {JSON.stringify(query.data)}</div>
 }
