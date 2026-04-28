@@ -1,10 +1,9 @@
-import {useQuery} from "@tanstack/react-query";
-import {APIRegistry} from '../registry.api.ts';
-
-const apiPhaseAlpha = APIRegistry['/api/phase/alpha'];
-const apiPhaseAlphaFetch = async () => ({name: apiPhaseAlpha.key, value: Math.random()});
+import {useQuery} from "@tanstack/react-query"
+import {APIRegistry} from "../registry.api"
+import {queryFn} from './queries/ApiPhaseAlpha.ts';
+const {queryKey} = APIRegistry["/api/phase/alpha"]
 
 export function PageAlpha() {
-    const apiPhaseAlphaFetchQuery = useQuery({queryKey: apiPhaseAlpha.key, queryFn: apiPhaseAlphaFetch})
-    return <div>alpha {JSON.stringify(apiPhaseAlphaFetchQuery.data)}</div>
+    const tanstackQuery = useQuery({ queryKey, queryFn })
+    return <div>alpha {JSON.stringify(tanstackQuery.data)}</div>
 }
