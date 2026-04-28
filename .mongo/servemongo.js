@@ -1,0 +1,36 @@
+import fs from "fs";
+import http from "http";
+import { MongoMemoryServer } from "mongodb-memory-server";
+import { MongoClient } from "mongodb";
+
+const mongod = await MongoMemoryServer.create();
+const client = new MongoClient(mongod.getUri());
+await client.connect();
+const db = client.db("mockdb");
+
+const fixtures = JSON.parse(fs.readFileSync("./.mongo/mongo.fixtures.json", "utf-8"));
+
+for (const [collection, docs] of Object.entries(fixtures)) {
+    await db.collection(collection).deleteMany({});
+    await db.collection(collection).insertMany(docs);
+}
+
+const server = http.createServer(async (req, res) => {
+    res.setHeader("Content-Type", "application/json");
+
+    const url = req.url || "/";
+    const collection = url.replace("/", "");
+
+    if (!collection || !fixtures[collection]) {
+        res.statusCode = 404;
+        return res.end(JSON.stringify({ error: "not found" }));
+    }
+
+    const data = await db.collection(collection).find({}).toArray();
+
+    return res.end(JSON.stringify(data, null, 2));
+});
+
+server.listen(4000, () => {
+    console.log("API server running on http://localhost:4000");
+});
