@@ -1,27 +1,34 @@
+import { createRouter, createRoute, createRootRoute, Outlet } from "@tanstack/react-router"
+import { PageAlpha } from "./PageAlpha"
+import { PageBeta } from "./PageBeta"
+import { PageCentauri } from "./PageCentauri"
 
-import {createRouter, createRoute, createRootRoute, Outlet} from "@tanstack/react-router"
-import { Alpha, Beta, Centauri } from "./pages"
-
-const rootRoute = createRootRoute({ component: () => <div><Outlet /></div> })
-
-const alphaRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/alpha",
-  component: Alpha
+const rootRoute = createRootRoute({
+    component: () => <div><Outlet /></div>
 })
 
-const betaRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/beta",
-  component: Beta
+const PageAlphaRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/PageAlpha",
+    component: PageAlpha
 })
 
-const centauriRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/centauri",
-  component: Centauri
+const PageBetaRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/PageBeta",
+    component: PageBeta
 })
 
-const routeTree = rootRoute.addChildren([alphaRoute, betaRoute, centauriRoute])
+const PageCentauriRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/PageCentauri",
+    component: PageCentauri
+})
+
+const routeTree = rootRoute.addChildren([
+    PageAlphaRoute,
+    PageBetaRoute,
+    PageCentauriRoute
+])
 
 export const router = createRouter({ routeTree })
