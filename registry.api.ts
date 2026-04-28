@@ -1,14 +1,11 @@
-import * as RegistryApiJSON from "./registry.api.json"
+/**
+ * Typesafety on the api source
+ */
 
-export type ApiRegistryEntry = {
-    key: string
-    url: string
-}
+export const APIRegistry = {
+    "/api/phase/alpha":         { key: "/api/phase/alpha",           url: "/api/phase/alpha" },
+    "/api/version/beta":        { key: "/api/version/beta",          url: "/api/version/beta" },
+    "/api/codename/centauri":   { key: "/api/codename/centauri",     url: "/api/codename/centauri" }
+} as const
 
-export const APIRegistry = RegistryApiJSON["api.registry.json"] as ApiRegistryEntry[]
-
-export function APIRegistryQuery(query: string): ApiRegistryEntry {
-    const result = APIRegistry.find((item) => item.key === query) || false;
-    if (false === result) throw new Error(`APIRegistryQuery query:"${query}" not found`)
-    return result;
-}
+export type ApiRegistry = typeof APIRegistry
