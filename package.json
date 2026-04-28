@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "patch": "npm version patch"
+    "patch": "npm version patch",
+    "makemongo" :"node ./.mongo/makemongo.js"
   },
   "dependencies": {
     "@eslint/js": "^10.0.1",
