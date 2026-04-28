@@ -45,6 +45,6 @@ const server = http.createServer(async (req, res) => {
     return res.end(JSON.stringify(data, null, 2));
 });
 
-server.listen(4000, () => {
-    console.log("API server running on http://localhost:4000");
+server.listen(4321, () => {
+    console.log("API server running on http://localhost:4321");
 });
