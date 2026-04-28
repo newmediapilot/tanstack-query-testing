@@ -7,8 +7,13 @@ When the registry is touched or misconfigured, TS will throw an error on build.
 > The composition of the component is a simple pattern that ensures tight coupling
 > and validation between the query layer and the component layer.
 
-### Component
-https://github.com/newmediapilot/tanstack-query-testing/blob/main/src/PageAlpha.tsx
+### Fixture pattern
 
-### Query
-https://github.com/newmediapilot/tanstack-query-testing/blob/main/src/queries/ApiPhaseAlpha.ts
+Fixtures can be combined using `./mongo/makemongo.js`.
+They can then be served using `./mongo/servemongo.js`.
+
+```shell
+npm run makemongo
+npm run servemongo
+npm run dev
+```
