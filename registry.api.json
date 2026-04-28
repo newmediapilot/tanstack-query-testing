@@ -1,0 +1,16 @@
+{
+  "api.registry.json": [
+    {
+      "key": "/api/phase/alpha",
+      "url": "/api/phase/alpha"
+    },
+    {
+      "key": "/api/version/beta",
+      "url": "/api/version/beta"
+    },
+    {
+      "key": "/api/codename/centauri",
+      "url": "/api/codename/centauri"
+    }
+  ]
+}
