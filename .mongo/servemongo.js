@@ -20,6 +20,21 @@ const server = http.createServer(async (req, res) => {
     const url = req.url || "/";
     const collection = url.replace("/", "");
 
+    if (url === "/api/getcustom") {
+        const c1 = await db.collection("document-data").find({}).toArray();
+        const c2 = await db.collection("document-name").find({}).toArray();
+        return res.end(
+            JSON.stringify(
+                {
+                    "document-data": c1,
+                    "document-name": c2
+                },
+                null,
+                2
+            )
+        );
+    }
+
     if (!collection || !fixtures[collection]) {
         res.statusCode = 404;
         return res.end(JSON.stringify({ error: "not found" }));
