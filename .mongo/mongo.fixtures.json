@@ -1,16 +1,33 @@
 {
-  "document-name": [
-    {
-      "key": "/signal/orchid",
-      "url": "/signal/orchid"
-    },
-    {
-      "key": "/signal/atlas",
-      "url": "/signal/atlas"
-    },
-    {
-      "key": "/signal/nyx",
-      "url": "/signal/nyx"
-    }
-  ]
+  "document-data": {
+    "key": "document-data",
+    "document-name": [
+      {
+        "data": "other"
+      },
+      {
+        "data": "other"
+      },
+      {
+        "data": "other"
+      }
+    ]
+  },
+  "document-name": {
+    "key": "document-name",
+    "document-name": [
+      {
+        "key": "/signal/orchid",
+        "url": "/signal/orchid"
+      },
+      {
+        "key": "/signal/atlas",
+        "url": "/signal/atlas"
+      },
+      {
+        "key": "/signal/nyx",
+        "url": "/signal/nyx"
+      }
+    ]
+  }
 }
