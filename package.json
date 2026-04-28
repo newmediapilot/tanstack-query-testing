@@ -1,7 +1,7 @@
 {
   "name": "spa",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,7 +11,7 @@
     "patch": "npm version patch",
     "makemongo": "node ./.mongo/makemongo.js",
     "servemongo": "node ./.mongo/servemongo.js",
-    "db":"npm run makemongo && npm run servemongo"
+    "db": "npm run makemongo && npm run servemongo"
   },
   "dependencies": {
     "@eslint/js": "10.0.1",
