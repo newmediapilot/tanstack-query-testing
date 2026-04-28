@@ -11,8 +11,7 @@ const db = client.db("mockdb");
 const fixtures = JSON.parse(fs.readFileSync("./.mongo/mongo.fixtures.json", "utf-8"));
 
 for (const [collection, docs] of Object.entries(fixtures)) {
-    await db.collection(collection).deleteMany({});
-    await db.collection(collection).insertMany(docs);
+    await db.collection(collection).insertMany(docs.data);
 }
 
 const server = http.createServer(async (req, res) => {
