@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "patch": "npm version patch",
-    "makemongo": "node ./.mongo/makemongo.js"
+    "makemongo": "node ./.mongo/makemongo.js",
+    "servemongo": "node ./.mongo/servemongo.js"
   },
   "dependencies": {
     "@eslint/js": "10.0.1",
@@ -23,6 +24,8 @@
     "eslint-plugin-react-refresh": "0.5.2",
     "glob": "^13.0.6",
     "globals": "17.5.0",
+    "mongodb": "^7.2.0",
+    "mongodb-memory-server": "^11.0.1",
     "react": "19.2.5",
     "react-dom": "19.2.5",
     "typescript": "6.0.3",
