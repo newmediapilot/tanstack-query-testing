@@ -9,22 +9,23 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "patch": "npm version patch",
-    "makemongo" :"node ./.mongo/makemongo.js"
+    "makemongo": "node ./.mongo/makemongo.js"
   },
   "dependencies": {
-    "@eslint/js": "^10.0.1",
-    "@tanstack/react-query": "^5.100.5",
-    "@tanstack/react-router": "^1.168.25",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "eslint": "^10.2.1",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.5.0",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
-    "typescript": "^6.0.3",
-    "vite": "^8.0.10"
+    "@eslint/js": "10.0.1",
+    "@tanstack/react-query": "5.100.5",
+    "@tanstack/react-router": "1.168.25",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.1",
+    "eslint": "10.2.1",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.2",
+    "glob": "^13.0.6",
+    "globals": "17.5.0",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
+    "typescript": "6.0.3",
+    "vite": "8.0.10"
   }
 }
