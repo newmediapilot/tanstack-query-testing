@@ -11,10 +11,11 @@ const out = {};
 for (const file of files) {
     const json = JSON.parse(fs.readFileSync(file, "utf-8"));
     const key = json.key;
-    out[key] = json[key];
+    console.log("key::", key);
+    out[key] = json;
 }
 
 fs.mkdirSync("./.mongo", { recursive: true });
 fs.writeFileSync("./.mongo/mongo.fixtures.json", JSON.stringify(out, null, 2));
 
-console.log(`Makemongo wrote ${Object.keys(out).length} tables`);
+console.log(`Makemongo wrote ${Object.keys(out).length} documents`);
