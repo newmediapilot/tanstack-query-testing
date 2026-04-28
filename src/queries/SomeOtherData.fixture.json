@@ -1,8 +1,8 @@
 {
   "key": "document-data",
   "document-name": [
-    { "data": "data"},
-    { "data": "data"},
-    { "data": "data"}
+    { "data": "other"},
+    { "data": "other"},
+    { "data": "other"}
   ]
 }
