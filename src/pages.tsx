@@ -1,18 +1,10 @@
+import {useQuery} from "@tanstack/react-query";
+import {APIRegistry} from '../registry.api.ts';
 
-import { useQuery } from "@tanstack/react-query"
-import { alphaQuery, betaQuery, centauriQuery } from "./queries.ts"
+const apiPhaseAlpha = APIRegistry['/api/phase/alpha'];
+const apiPhaseAlphaFetch = async () => ({name: apiPhaseAlpha.key, value: Math.random()});
 
 export function Alpha() {
-  const q = useQuery({ queryKey: ["alpha"], queryFn: alphaQuery })
-  return <div>alpha {JSON.stringify(q.data)}</div>
-}
-
-export function Beta() {
-  const q = useQuery({ queryKey: ["beta"], queryFn: betaQuery })
-  return <div>beta {JSON.stringify(q.data)}</div>
-}
-
-export function Centauri() {
-  const q = useQuery({ queryKey: ["centauri"], queryFn: centauriQuery })
-  return <div>centauri {JSON.stringify(q.data)}</div>
+    const apiPhaseAlphaFetchQuery = useQuery({queryKey: apiPhaseAlpha.key, queryFn: apiPhaseAlphaFetch})
+    return <div>alpha {JSON.stringify(apiPhaseAlphaFetchQuery.data)}</div>
 }
