@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "patch": "npm version patch",
     "makemongo": "node ./.mongo/makemongo.js",
-    "servemongo": "node ./.mongo/servemongo.js"
+    "servemongo": "node ./.mongo/servemongo.js",
+    "db":"npm run makemongo && npm run servemongo"
   },
   "dependencies": {
     "@eslint/js": "10.0.1",
