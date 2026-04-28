@@ -1,7 +1,6 @@
 import {useQuery} from "@tanstack/react-query";
 import {APIRegistry} from "../registry.api";
 import {queryFn} from "./queries/ApiPhaseAlpha";
-
 const {queryKey} = APIRegistry["/api/phase/alpha"];
 
 export function PageAlpha() {
