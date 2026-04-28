@@ -1,5 +1,5 @@
 /**
- * Typesafety on the api source
+ * Type safety on the api source
  */
 
 export const APIRegistry = {
