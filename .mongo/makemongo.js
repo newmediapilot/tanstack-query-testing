@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = path.resolve(".");
-const OUTPUT = path.join(ROOT, "mongo.fixtures.json");
+const OUTPUT = path.join(ROOT, "./.mongo/mongo.fixtures.json");
 
 function toTableKey(key) {
     return key
